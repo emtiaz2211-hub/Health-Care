@@ -1265,12 +1265,12 @@
                         "Content-Type": "application/json" 
                     },
                     body: JSON.stringify({
-                        access_key: "YOUR_ACCESS_KEY", // 👈 GET FREE KEY FROM web3forms.com
-                        ...data,
-                        subject: "New VIP Booking - MediCare Elite",
-                        from_name: data.name,
-                        message: `VIP Appointment Request!\nService: ${data.service}\nDate: ${data.date}\nURGENT RESPONSE REQUIRED!`
-                    })
+    access_key: "a4e9e027-b7a8-4743-9427-854662e501a3", // 👈 your access key
+    ...data,
+    subject: "New VIP Booking - MediCare Elite",
+    from_name: data.name,
+    message: `VIP Appointment Request!\nService: ${data.service}\nDate: ${data.date}\nURGENT RESPONSE REQUIRED!`
+})
                 });
 
                 document.getElementById('successModal').style.display = 'block';
