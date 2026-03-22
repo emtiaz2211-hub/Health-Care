@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Elite Clinic | Premium Healthcare Excellence</title>
+    <meta name="description" content="🏥 Elite healthcare with 98% patient satisfaction. Instant booking, 24/7 emergency, WhatsApp support. 50K+ patients trust us. Limited VIP slots!">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-green: #059669;
+            --success-green: #10b981;
+            --warning-orange: #f59e0b;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.12);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #10b981 100%);
+            --glass-bg: rgba(255,255,255,0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: var(--light-bg);
+        }
+
+        /* LOADING ANIMATION - ULTIMATE PREMIUM */
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--gradient-primary);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .loading-logo {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--glass-bg);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.3s ease;
+            animation: progress 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        /* NAVBAR - GLASSMORPHISM + PROGRESS */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            z-index: 10000;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp(1rem, 4vw, 3rem);
+        }
+
+        .logo {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
+        /* HERO SECTION - ULTIMATE */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: heroFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 4rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, white 0%, rgba(255,255,255,0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: white;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--success-green);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(16,185,129,0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: var(--shadow-lg);
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: var(--shadow-lg); }
+            50% { box-shadow: 0 0 30px rgba(37,211,102,0.6); }
+            100% { box-shadow: var(--shadow-lg); }
+        }
+
+        /* ULTIMATE HERO IMAGE */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-main-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+            animation: heroFloatImage 6s ease-in-out infinite;
+        }
+
+        .badge-trust {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--success-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: var(--shadow-lg);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes heroFloatImage {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(1deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* TRUST SECTION */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            padding: 6rem clamp(1rem, 4vw, 4rem);
+            background: var(--card-bg);
+        }
+
+        .trust-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .trust-number {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        /* SERVICES - ULTIMATE CARDS */
+        .services-section {
+            padding: 8rem clamp(1rem, 4vw, 4rem);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* GOOGLE MAPS */
+        .map-section {
+            padding: 4rem clamp(1rem, 4vw, 4rem);
+            background: var(--light-bg);
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ULTIMATE BOOKING FORM */
+        .booking-hero {
+            background: linear-gradient(135deg, var(--success-green) 0%, #059669 100%);
+            padding: 8rem clamp(1rem, 4vw, 4rem);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .urgency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(245,158,11,0.2);
+            color: var(--warning-orange);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            animation: pulse-warning 2s infinite;
+            box-shadow: 0 4px 20px rgba(245,158,11,0.3);
+        }
+
+        @keyframes pulse-warning {
+            0%, 100% { box-shadow: 0 4px 20px rgba(245,158,11,0.3); }
+            50% { box-shadow: 0 4px 30px rgba(245,158,11,0.6); }
+        }
+
+        .booking-form-container {
+            max-width: 700px;
+            margin: 3rem auto 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            padding: 3.5rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 1rem;
+            left: 1.25rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.5rem 1.25rem 0.5rem;
+            border: 2px solid rgba(0,0,0,0.1);
+            border-radius: 16px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(30,64,175,0.1);
+        }
+
+        .form-input:focus + label,
+        .form-input:not(:placeholder-shown) + label {
+            top: 0.25rem;
+            left: 1rem;
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+            background: var(--glass-bg);
+            padding: 0 0.5rem;
+        }
+
+        /* FLOATING ACTION BUTTONS - ULTIMATE */
+        .fab-stack {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 10001;
+        }
+
+        .fab {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .fab-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            transform: scale(1.15);
+            box-shadow: 0 10px 30px rgba(37,211,102,0.4);
+        }
+
+        .fab-book {
+            background: var(--success-green);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: var(--shadow-lg); }
+            50% { box-shadow: 0 0 30px rgba(16,185,129,0.6); }
+            100% { box-shadow: var(--shadow-lg); }
+        }
+
+        .fab:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* MOBILE STICKY CTA */
+        .mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--success-green);
+            color: white;
+            text-align: center;
+            padding: 1.2rem;
+            z-index: 9999;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            display: none;
+            text-decoration: none;
+        }
+
+        .mobile-cta i {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: block;
+            }
+        }
+
+        /* TESTIMONIALS CAROUSEL */
+        .testimonials-section {
+            padding: 8rem clamp(1rem, 4vw, 4rem);
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .testimonial-carousel {
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            display: none;
+            text-align: center;
+            padding: 0 2rem;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid rgba(255,255,255,0.3);
+        }
+
+        .testimonial-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* DOCTORS SECTION */
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 5rem;
+        }
+
+        .doctor-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .doctor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .doctor-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .doctor-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--success-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 6rem clamp(1rem, 4vw, 4rem) 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--glass-bg);
+                backdrop-filter: blur(25px);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+            }
+
+            .hamburger span {
+                width: 25px;
+                height: 3px;
+                background: var(--text-dark);
+                transition: 0.3s;
+                border-radius: 2px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .fab-stack {
+                flex-direction: row;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* SCROLL ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ACCESSIBILITY */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">MediCare Elite</div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <div style="color: rgba(255,255,255,0.8); font-weight: 500;">Loading premium experience...</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">MediCare Elite</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#doctors" class="nav-link">Doctors</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#booking" class="nav-link">Book Now</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero reveal">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Elite Healthcare<br>Redefined</h1>
+                <p class="subtitle">🏥 98% Patient Satisfaction | 50K+ Served | Limited VIP Slots Available This Week</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Patients Treated</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">35+</span>
+                        <span class="stat-label">Specialists</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">18+</span>
+                        <span class="stat-label">Years Excellence</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Emergency</span>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <a href="#booking" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Book VIP Slot
+                    </a>
+                    <a href="tel:+8801712345678" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        Call Emergency
+                    </a>
+                    <a href="https://wa.me/8801712345678?text=🏥%20MediCare%20Elite%20Booking%0AHi!%20I%20need%20an%20urgent%20appointment.%20Available%20VIP%20slots?" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1576091160399-1d65cdaa8782?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=90" 
+                     alt="Elite medical consultation" class="hero-main-image">
+                <div class="badge-trust">#1 Trusted Clinic</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST INDICATORS -->
+    <section class="trust-grid reveal">
+        <div class="trust-card">
+            <i class="fas fa-users" style="font-size: 4rem; color: var(--primary-blue); margin-bottom: 1.5rem; display: block;"></i>
+            <div class="trust-number">50,847</div>
+            Happy Patients
+        </div>
+        <div class="trust-card">
+            <i class="fas fa-user-md" style="font-size: 4rem; color: var(--success-green); margin-bottom: 1.5rem; display: block;"></i>
+            <div class="trust-number">35+</div>
+            World-Class Doctors
+        </div>
+        <div class="trust-card">
+            <i class="fas fa-award" style="font-size: 4rem; color: var(--warning-orange); margin-bottom: 1.5rem; display: block;"></i>
+            <div class="trust-number">18+</div>
+            Years of Excellence
+        </div>
+        <div class="trust-card">
+            <i class="fas fa-clock" style="font-size: 4rem; color: var(--accent-green); margin-bottom: 1.5rem; display: block;"></i>
+            <div class="trust-number">24/7</div>
+            Emergency Ready
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services-section reveal">
+        <div class="section-header">
+            <h2 class="section-title">Medical Excellence</h2>
+            <p style="font-size: 1.3rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                World-class specialties with cutting-edge technology and personalized care
+            </p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem; font-weight: 700;">Cardiology</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">Advanced heart diagnostics, interventional procedures, and personalized cardiac care programs.</p>
+                <a href="#booking" class="btn btn-primary" style="margin-top: 2rem; display: inline-block;">Book Now</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem; font-weight: 700;">Advanced Dentistry</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">Complete smile solutions from cosmetic dentistry to implantology and orthodontics.</p>
+                <a href="#booking" class="btn btn-primary" style="margin-top: 2rem; display: inline-block;">Book Now</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-lungs"></i>
+                </div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem; font-weight: 700;">Pulmonology</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">Comprehensive respiratory care including asthma management, sleep studies, and advanced pulmonology.</p>
+                <a href="#booking" class="btn btn-primary" style="margin-top: 2rem; display: inline-block;">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTORS -->
+    <section id="doctors" class="services-section reveal" style="padding-bottom: 4rem;">
+        <div class="section-header">
+            <h2 class="section-title">Our Elite Specialists</h2>
+            <p style="font-size: 1.3rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                Internationally trained doctors with decades of experience
+            </p>
+        </div>
+        
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=90" alt="Dr. Sarah Johnson" class="doctor-image">
+                <div class="doctor-badge">★ 4.95</div>
+                <div style="padding: 2.5rem;">
+                    <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Dr. Sarah Johnson</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Cardiologist • 18 Yrs Exp</p>
+                    <div style="color: var(--success-green); font-weight: 700; font-size: 1.1rem;">12K+ Patients Served</div>
+                </div>
+            </div>
+            
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=90" alt="Dr. Michael Chen" class="doctor-image">
+                <div class="doctor-badge">★ 4.92</div>
+                <div style="padding: 2.5rem;">
+                    <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Dr. Michael Chen</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Dental Surgeon • 15 Yrs Exp</p>
+                    <div style="color: var(--success-green); font-weight: 700; font-size: 1.1rem;">9K+ Smile Transformations</div>
+                </div>
+            </div>
+            
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1594828475744-96a8f4d229f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=90" alt="Dr. Ayesha Rahman" class="doctor-image">
+                <div class="doctor-badge">★ 4.98</div>
+                <div style="padding: 2.5rem;">
+                    <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Dr. Ayesha Rahman</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Pulmonologist • 20 Yrs Exp</p>
+                    <div style="color: var(--success-green); font-weight: 700; font-size: 1.1rem;">15K+ Respiratory Cases</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials-section reveal">
+        <div class="section-header" style="color: white;">
+            <h2 class="section-title" style="-webkit-text-fill-color: white; background: none;">Patient Success Stories</h2>
+        </div>
+        
+        <div class="testimonial-carousel">
+            <div class="testimonial-slide active">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face" alt="Fatima Ahmed" class="testimonial-avatar">
+                <p class="testimonial-text">"🏆 BEST medical experience of my life! Dr. Sarah saved my heart health. Professional, caring, and EXCELLENT results. Cannot recommend enough!"</p>
+                <div style="font-weight: 700; font-size: 1.2rem;">Fatima Ahmed • Cardiology</div>
+            </div>
+            
+            <div class="testimonial-slide">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Rahim Khan" class="testimonial-avatar">
+                <p class="testimonial-text">"My smile transformation was LIFE-CHANGING! Dr. Michael is a genius. Zero pain, amazing results. 100% worth every penny."</p>
+                <div style="font-weight: 700; font-size: 1.2rem;">Rahim Khan • Dentistry</div>
+            </div>
+            
+            <div class="testimonial-slide">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Nasrin Begum" class="testimonial-avatar">
+                <p class="testimonial-text">"Family doctor we TRUST completely. Always available 24/7, explains everything perfectly, genuinely cares. Our health partner for life."</p>
+                <div style="font-weight: 700; font-size: 1.2rem;">Nasrin Begum • Pulmonology</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="booking-hero reveal">
+        <div class="urgency-badge" id="urgencyBadge">
+            <i class="fas fa-exclamation-triangle"></i>
+            ⚠️ LIMITED SLOTS: Only 3 VIP appointments left this week!
+        </div>
+        <h2 style="font-size: clamp(3rem, 8vw, 5rem); font-weight: 800; margin-bottom: 1rem;">
+            Secure Your Slot Now
+        </h2>
+        <p style="font-size: 1.4rem; opacity: 0.95; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            📞 Response within 10 mins • ✅ Instant confirmation • 💬 WhatsApp backup
+        </p>
+        
+        <form class="booking-form-container" id="eliteBookingForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" class="form-input" id="name" placeholder=" " required>
+                    <label>Full Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-input" id="phone" placeholder=" " required>
+                    <label>Phone Number</label>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="date" class="form-input" id="date" placeholder=" " required>
+                    <label>Preferred Date</label>
+                </div>
+                <div class="form-group">
+                    <select class="form-input" id="service" style="padding: 1.5rem 1.25rem 0.5rem;">
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="dentistry">Advanced Dentistry</option>
+                        <option value="pulmonology">Pulmonology</option>
+                        <option value="emergency">🚨 Emergency</option>
+                    </select>
+                    <label>Service Needed</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.5rem; font-size: 1.2rem; margin-top: 1rem;">
+                <i class="fas fa-lock"></i>
+                Secure My VIP Slot Now
+            </button>
+            
+            <div id="successModal" style="display: none; background: var(--success-green); color: white; padding: 2rem; border-radius: 20px; text-align: center; margin-top: 2rem; animation: slideUp 0.5s ease;">
+                <i class="fas fa-check-circle" style="font-size: 4rem; margin-bottom: 1rem; display: block;"></i>
+                <h3 style="margin-bottom: 1rem;">🎉 Appointment Secured!</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">We'll call you within 10 minutes to confirm. Thank you for choosing MediCare Elite! ⭐</p>
+                <a href="#" onclick="resetForm()" class="btn btn-secondary" style="background: rgba(255,255,255,0.3);">Book Another</a>
+            </div>
+        </form>
+    </section>
+
+    <!-- GOOGLE MAPS -->
+    <section class="map-section reveal">
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.123456789!2d90.503489!3d23.633181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a69973f%3A0x123456789!2sNarayanganj!5e0!3m2!1sen!2sbd!4v1234567890!5m2!1sen!2sbd"
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 24px;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FAB STACK -->
+    <div class="fab-stack">
+        <a href="https://wa.me/8801712345678?text=🏥%20MediCare%20Elite%20Booking%0AHi!%20I%20need%20an%20urgent%20appointment.%20Available%20VIP%20slots?%0AName:%0APhone:%0AService:" 
+           class="fab fab-whatsapp" target="_blank" title="WhatsApp Instant Booking">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#booking" class="fab fab-book" title="VIP Booking">
+            <i class="fas fa-calendar-plus"></i>
+        </a>
+    </div>
+
+    <!-- MOBILE STICKY CTA -->
+    <a href="#booking" class="mobile-cta">
+        <i class="fas fa-calendar-check"></i>
+        Book Your Appointment Now - Limited Slots!
+    </a>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer reveal">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="-webkit-text-fill-color: white; font-size: 2rem;">MediCare Elite</div>
+                <p style="margin-top: 1rem; color: #94a3b8; line-height: 1.7;">🏥 Bangladesh's #1 premium clinic. Elite care, elite results, elite experience.</p>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <a href="#" style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--success-green);">Quick Links</h3>
+                <a href="#services" style="color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.75rem;">Services</a>
+                <a href="#doctors" style="color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.75rem;">Our Doctors</a>
+                <a href="#booking" style="color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.75rem;">VIP Booking</a>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--success-green);">Contact</h3>
+                <div style="margin-bottom: 1rem;">
+                    <i class="fas fa-phone" style="color: var(--success-green); margin-right: 0.75rem;"></i>
+                    <a href="tel:+8801712345678" style="color: #94a3b8; text-decoration: none;">+880 17 1234 5678</a>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <i class="fas fa-envelope" style="color: var(--success-green); margin-right: 0.75rem;"></i>
+                    <a href="mailto:elite@medicare.com" style="color: #94a3b8; text-decoration: none;">elite@medicare.com</a>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt" style="color: var(--success-green); margin-right: 0.75rem;"></i>
+                    Narayanganj, Dhaka Division
+                </div>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--success-green);">🚨 Emergency</h3>
+                <div style="font-size: 1.4rem; font-weight: 800; color: var(--success-green);">
+                    24/7 Emergency Line<br>
+                    <a href="tel:+8801712345678" style="color: var(--success-green); text-decoration: none; font-size: 1.6rem;">+880 17 1234 5678</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 3rem; border-top: 1px solid #334155; color: #94a3b8;">
+            © 2026 MediCare Elite Clinic. All rights reserved. | Premium Healthcare Redefined.
+        </div>
+    </footer>
+
+    <script>
+        // ULTIMATE LOADING ANIMATION
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loadingScreen');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.transform = 'scale(1.2)';
+                setTimeout(() => loader.style.display = 'none', 800);
+            }, 3200);
+        });
+
+        // MOBILE MENU
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // SMOOTH SCROLL + ACTIVE NAV
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // SCROLL ANIMATIONS
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255,255,255,0.95)';
+                navbar.style.boxShadow = '0 10px 40px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.background = 'rgba(255,255,255,0.85)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // TESTIMONIAL CAROUSEL
+        const slides = document.querySelectorAll('.testimonial-slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 6000);
+
+        // REAL WEB3FORMS INTEGRATION
+        document.getElementById('eliteBookingForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                date: document.getElementById('date').value,
+                service: document.getElementById('service').value
+            };
+
+            try {
+                await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { 
+                        "Content-Type": "application/json" 
+                    },
+                    body: JSON.stringify({
+                        access_key: "YOUR_ACCESS_KEY", // 👈 GET FREE KEY FROM web3forms.com
+                        ...data,
+                        subject: "New VIP Booking - MediCare Elite",
+                        from_name: data.name,
+                        message: `VIP Appointment Request!\nService: ${data.service}\nDate: ${data.date}\nURGENT RESPONSE REQUIRED!`
+                    })
+                });
+
+                document.getElementById('successModal').style.display = 'block';
+                document.querySelector('.booking-form-container').style.display = 'none';
+
+            } catch (error) {
+                // Fallback WhatsApp if web3forms fails
+                const whatsappUrl = `https://wa.me/8801712345678?text=🚨%20NEW%20VIP%20BOOKING!%0A👤%20${data.name}%0A📞%20${data.phone}%0A📅%20${data.date}%0A🏥%20${data.service}`;
+                window.open(whatsappUrl, '_blank');
+                alert("Form submitted via WhatsApp backup! We'll contact you shortly.");
+            }
+        });
+
+        function resetForm() {
+            document.getElementById('eliteBookingForm').reset();
+            document.getElementById('eliteBookingForm').style.display = 'block';
+            document.getElementById('successModal').style.display = 'none';
+        }
+
+        // DATE PICKER MIN TODAY
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+        // URGENCY COUNTDOWN
+        function updateUrgency() {
+            const slotsLeft = Math.floor(Math.random() * 3) + 1; // 1-3 slots
+            document.getElementById('urgencyBadge').innerHTML = 
+                `<i class="fas fa-exclamation-triangle"></i> ⚠️ LIMITED SLOTS: Only ${slotsLeft} VIP appointments left today!`;
+        }
+        updateUrgency();
+        setInterval(updateUrgency, 30000); // Update every 30s
+
+        // FORM FLOATING LABELS
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.value) {
+                    input.parentElement.querySelector('label').style.color = 'var(--primary-blue)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
